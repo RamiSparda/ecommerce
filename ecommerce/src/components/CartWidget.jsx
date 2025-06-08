@@ -1,10 +1,10 @@
 function CartWidget() {
   return (
-    <div style={{ display: 'flex', alignItems: 'center' }}>
+    <div style={{ display: 'flex', alignItems: 'center', color: '#fff' }}>
       🛒
-      <span style={{ marginLeft: '5px' }}>7</span>
+      <span style={{ marginLeft: '5px', color: '#0fff20' }}>7</span>
     </div>
   )
 }
 
-export default CartWidget
+export default CartWidget;

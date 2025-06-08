@@ -1,33 +1,23 @@
-import CartWidget from './CartWidget'
+import logo from '../assets/logo.png';
+import { Link } from 'react-router-dom';
+import CartWidget from './CartWidget';
+import './NavBar.css';
+
 
 function NavBar() {
   return (
-    <nav style={{
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      padding: '1rem 2rem',
-      backgroundColor: '#f8f9fa',
-      borderBottom: '1px solid #ddd'
-    }}>
-      {/* Izquierda: Logo */}
-      <div style={{ flex: 1 }}>
-        <h1 style={{ margin: 0 }}>MiTienda</h1>
+<nav className="navbar">
+      <Link to="/">
+        <img src={logo} alt="Logo" className="logo" />
+      </Link>
+      <div className="nav-links">
+        <Link to="/category/remeras">Remeras</Link>
+        <Link to="/category/pantalones">Pantalones</Link>
+        <Link to="/category/camperas">Camperas</Link>
       </div>
-
-      {/* Centro: Enlaces */}
-      <div style={{ flex: 1, display: 'flex', justifyContent: 'center', gap: '2rem' }}>
-        <a href="#" style={{ textDecoration: 'none', color: '#333' }}>Inicio</a>
-        <a href="#" style={{ textDecoration: 'none', color: '#333' }}>Productos</a>
-        <a href="#" style={{ textDecoration: 'none', color: '#333' }}>Contacto</a>
-      </div>
-
-      {/* Derecha: Carrito */}
-      <div style={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
-        <CartWidget />
-      </div>
+      <CartWidget />
     </nav>
-  )
+  );
 }
 
-export default NavBar
+export default NavBar;
