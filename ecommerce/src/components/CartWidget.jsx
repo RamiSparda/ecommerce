@@ -1,10 +1,21 @@
+import { Link } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
+import './CartWidget.css';
+
 function CartWidget() {
+  const { getTotalQuantity } = useCart();
+  const totalQuantity = getTotalQuantity();
+
   return (
-    <div style={{ display: 'flex', alignItems: 'center', color: '#fff' }}>
+    <Link to="/cart" className="cart-widget">
       🛒
-      <span style={{ marginLeft: '5px', color: '#0fff20' }}>7</span>
-    </div>
-  )
+      {totalQuantity > 0 && (
+        <span className="cart-widget__badge">
+          {totalQuantity}
+        </span>
+      )}
+    </Link>
+  );
 }
 
 export default CartWidget;
